@@ -22,24 +22,11 @@ public class ParallelRace {
         return new int[] { min, max, lista.size() };
     };
 
-<<<<<<< HEAD
-  
+    // Valida si el número es divisible por 2 (par)
+    Function<Integer, Boolean> esDivisible = numero -> numero % 2 == 0;
 
-=======
-<<<<<<< HEAD
-    Function<Integer, Boolean> validacion = numero -> numero >= 2 && numero % 2 == 0;
-=======
->>>>>>> feature/challenge_2_lane_two_ArgalleCaicedo_2026-2
-    Function<Integer, Boolean> validacion = numero  ->{
-        boolean validado = (numero >= 2 && numero % 2 == 0) ? true : false;
-        return validado;
-
-<<<<<<< HEAD
-    };  
-=======
-    };
->>>>>>> d070728d1a7d305656605538e9b436e93f15b5c6
->>>>>>> feature/challenge_2_lane_two_ArgalleCaicedo_2026-2
+    // Valida si el número es múltiplo de 2 y además >= 2
+    Function<Integer, Boolean> esMultiplo = numero -> numero >= 2 && numero % 2 == 0;
 
     public Resultado run(List<Integer> lista) {
         int[] valores = lambda.apply(lista);
