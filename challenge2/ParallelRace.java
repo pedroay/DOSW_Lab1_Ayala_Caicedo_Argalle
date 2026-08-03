@@ -22,8 +22,14 @@ public class ParallelRace {
         return new int[] { min, max, lista.size() };
     };
 
+<<<<<<< HEAD
     // Valida si el número es divisible por 2 (par)
     Function<Integer, Boolean> esDivisible = numero -> numero % 2 == 0;
+=======
+    Function<Integer, Boolean> validacion = numero -> {
+        boolean validado = (numero >= 2 && numero % 2 == 0) ? true : false;
+        return validado;
+>>>>>>> 0bf3358a31fcef630b9117a8ae782d3da48a3430
 
     // Valida si el número es múltiplo de 2 y además >= 2
     Function<Integer, Boolean> esMultiplo = numero -> numero >= 2 && numero % 2 == 0;
@@ -31,8 +37,18 @@ public class ParallelRace {
     // Valida si el número es impar (reutiliza esDivisible)
     Function<Integer, Boolean> isOdd = numero -> !esDivisible.apply(numero);
 
+<<<<<<< HEAD
     public Resultado run(List<Integer> lista) {
         int[] valores = lambda.apply(lista);
         return new Resultado(valores[0], valores[1], valores[2]);
+=======
+    Function<Integer, Boolean> isEven = numero -> {
+        return numero % 2 == 0;
+    };
+
+    public Resultado run(
+            List<Integer> lista) {
+        return new Resultado(lambda.apply(lista));
+>>>>>>> 0bf3358a31fcef630b9117a8ae782d3da48a3430
     }
 }
