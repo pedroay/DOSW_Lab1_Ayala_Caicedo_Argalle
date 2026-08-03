@@ -28,6 +28,9 @@ public class ParallelRace {
     // Valida si el número es múltiplo de 2 y además >= 2
     Function<Integer, Boolean> esMultiplo = numero -> numero >= 2 && numero % 2 == 0;
 
+    // Valida si el número es impar (reutiliza esDivisible)
+    Function<Integer, Boolean> isOdd = numero -> !esDivisible.apply(numero);
+
     public Resultado run(List<Integer> lista) {
         int[] valores = lambda.apply(lista);
         return new Resultado(valores[0], valores[1], valores[2]);
