@@ -23,13 +23,13 @@ public class ParallelRace {
     };
 
     // Valida si el número es divisible por 2 (par)
-    Function<Integer, Boolean> esDivisible = numero -> numero % 2 == 0;
+    Function<Integer, Boolean> isDivisible = numero -> numero % 2 == 0;
 
     // Valida si el número es múltiplo de 2 y además >= 2
-    Function<Integer, Boolean> esMultiplo = numero -> numero >= 2 && numero % 2 == 0;
+    Function<Integer, Boolean> isMultiple = numero -> numero >= 2 && numero % 2 == 0;
 
-    // Valida si el número es impar (reutiliza esDivisible)
-    Function<Integer, Boolean> isOdd = numero -> !esDivisible.apply(numero);
+    // Valida si el número es impar (reutiliza isDivisible)
+    Function<Integer, Boolean> isOdd = numero -> !isDivisible.apply(numero);
 
     // Validacion si el numero es par
     Function<Integer, Boolean> isEven = numero -> {
@@ -40,6 +40,6 @@ public class ParallelRace {
     public Resultado run(List<Integer> lista) {
         int[] valores = lambda.apply(lista);
         return new Resultado(valores[0], valores[1], valores[2]);
-    }
+    };
 
 }
