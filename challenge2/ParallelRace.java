@@ -22,7 +22,15 @@ public class ParallelRace {
         return new int[]{min, max, lista.size()};
     };
 
+<<<<<<< HEAD
     Function<Integer, Boolean> validacion = numero -> numero >= 2 && numero % 2 == 0;
+=======
+    Function<Integer, Boolean> validacion = numero  ->{
+        boolean validado = (numero >= 2 && numero % 2 == 0) ? true : false;
+        return validado;
+
+    };
+>>>>>>> d070728d1a7d305656605538e9b436e93f15b5c6
 
     public Resultado run(List<Integer> lista) {
         int[] valores = lambda.apply(lista);
