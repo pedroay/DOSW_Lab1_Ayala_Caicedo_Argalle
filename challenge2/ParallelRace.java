@@ -5,20 +5,25 @@ import java.util.function.Function;
 
 public class ParallelRace {
 
-    Function<List<Integer>, Integer> lambda = lista -> {
+    Function<List<Integer>, int[]> lambda = lista -> {
         if (lista == null || lista.isEmpty()) {
-            return Integer.MAX_VALUE;
+            return new int[]{Integer.MAX_VALUE, Integer.MIN_VALUE, 0};
         }
         int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
         for (int numero : lista) {
             if (numero < min) {
                 min = numero;
             }
+            if (numero > max) {
+                max = numero;
+            }
         }
-        return min;
+        return new int[]{min, max, lista.size()};
     };
 
     public Resultado run(List<Integer> lista) {
-        return new Resultado(lambda.apply(lista));
+        int[] valores = lambda.apply(lista);
+        return new Resultado(valores[0], valores[1], valores[2]);
     }
 }
