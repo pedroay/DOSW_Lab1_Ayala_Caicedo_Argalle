@@ -18,13 +18,18 @@ public class ParallelRace {
         return max;
     };
 
-    Function<Integer, Boolean> validacion = numero  ->{
+    Function<Integer, Boolean> validacion = numero -> {
         boolean validado = (numero >= 2 && numero % 2 == 0) ? true : false;
         return validado;
 
     };
 
-    public Resultado run(List<Integer> lista) {
+    Function<Integer, Boolean> isEven = numero -> {
+        return numero % 2 == 0;
+    };
+
+    public Resultado run(
+            List<Integer> lista) {
         return new Resultado(lambda.apply(lista));
     }
 }
