@@ -9,18 +9,10 @@ import java.util.stream.Stream;
 
 public class Challenge3 {
 
-    /**
-     * Solución de la colisión:
-     * - Repite el mensaje 3 veces separadas por espacio.
-     * - Invierte el resultado final.
-     * - Utiliza stream(), StringBuilder y StringBuffer.
-     */
     public static String transformMessage(String message) {
         if (message == null || message.isEmpty()) {
             return "";
         }
-
-        // 1. Uso de StringBuilder y stream() para repetir 3 veces
         StringBuilder sb = new StringBuilder();
 
         Stream.generate(() -> message)
@@ -32,13 +24,11 @@ public class Challenge3 {
                     sb.append(item);
                 });
 
-        // 2. Uso de StringBuffer para invertir el resultado final
         StringBuffer buffer = new StringBuffer(sb.toString());
         return buffer.reverse().toString();
     }
 
     public static void main(String[] args) {
-        // Uso de expresión lambda para invocar la función
         Function<String, String> transformerLambda = msg -> transformMessage(msg);
 
         String testInput = "hola";
