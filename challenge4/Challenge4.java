@@ -53,8 +53,7 @@ public class Challenge4 {
                 Map.entry("silver", 4),
                 Map.entry("ruby", 4),
                 Map.entry("gold", 12),
-                Map.entry("silver", 99) // Duplicado que será ignorado
-        );
+                Map.entry("silver", 99));
 
         List<Map.Entry<String, Integer>> datosb = List.of(
                 Map.entry("silver", 8),
