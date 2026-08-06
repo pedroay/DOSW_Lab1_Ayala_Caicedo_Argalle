@@ -37,9 +37,13 @@ public class ParallelRace {
     
     };
 
-    public Resultado run(List<Integer> lista) {
-        int[] valores = lambda.apply(lista);
-        return new Resultado(valores[0], valores[1], valores[2]);
+    Function<List<Integer>, Resultado> miFuncion = (lista) -> {
+        int[] valores = lambda.apply(lista); // Asumiendo que 'lambda' está definido en el contexto
+        boolean multiplo = isMultiple.apply(lista.size());
+        boolean divisor = isDivisible.apply(lista.size());
+        boolean even = isEven.apply(lista.size());
+        boolean odd = isOdd.apply(lista.size());
+        return new Resultado(valores[0], valores[1], valores[2],multiplo,divisor,even,odd);
     };
 
 }
