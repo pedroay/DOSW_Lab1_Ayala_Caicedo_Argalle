@@ -10,23 +10,22 @@ public class Challenge4 {
     // Método del Estudiante B usando Hashtable
     public static Hashtable<String, Integer> maps(List<Map.Entry<String, Integer>> entries) {
         return entries.stream()
-                .sorted((e1, e2) -> e1.getKey().compareTo(e2.getKey())) // sorted() con expresión Lambda
-                .map(entry -> Map.entry(entry.getKey(), entry.getValue())) // map() con expresión Lambda
+                .sorted((e1, e2) -> e1.getKey().compareTo(e2.getKey())) 
+                .map(entry -> Map.entry(entry.getKey(), entry.getValue())) 
                 .collect(Collectors.toMap(
                         entry -> entry.getKey(),
                         entry -> entry.getValue(),
-                        (primerValor, nuevoValor) -> primerValor, // Ignora duplicados, conserva el primero
+                        (primerValor, nuevoValor) -> primerValor, 
                         Hashtable::new
                 ));
     }
 
     public static void main(String[] args) {
-        // Datos de entrada de prueba (Estudiante B)
         List<Map.Entry<String, Integer>> datos = List.of(
                 Map.entry("silver", 8),
                 Map.entry("ruby", 4),
                 Map.entry("gold", 12),
-                Map.entry("silver", 99) // Duplicado que será ignorado
+                Map.entry("silver", 99)
         );
 
         Hashtable<String, Integer> resultado = maps(datos);
