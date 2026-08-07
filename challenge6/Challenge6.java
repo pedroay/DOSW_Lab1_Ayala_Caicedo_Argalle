@@ -54,8 +54,5 @@ public class Challenge6 {
         executeCommand("WHISPER");
         executeCommand("FAREWELL");
         executeCommand("SING");
-
-        System.out.println("--- Prueba de error ---");
-        executeCommand("SLEEP");
     }
 }
