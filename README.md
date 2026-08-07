@@ -102,3 +102,57 @@ Briefly explain:
 - **Which Git operations were used:** `git checkout -b feature/challenge6`, `git commit`, `git pull`, and `git merge feature/challenge6`.
 - **Which conflicts appeared:** Merge conflict in the switch expression when team members registered new command keys concurrently.
 - **How the conflicts were resolved:** Combined all switch branches into a single unified switch expression, ensuring all 8 commands register cleanly.
+
+---
+
+## Lab Questions & Answers
+
+1. **Team agreements: Add the agreements you defined in the Onboarding section here.**
+   - Use descriptive branch names for each challenge (e.g., `feature/challenge1`).
+   - Divide work equitably among team members (Pedro Ayala, Samuel Argalle, Javier Caicedo).
+   - Test code locally before creating a pull request or merging into `main`.
+   - Resolve merge conflicts collaboratively when combining branch features.
+
+2. **What is the difference between `git merge` and `git rebase`?**
+   - **`git merge`**: Combines two branches by creating a new merge commit. It preserves the exact historical timeline of both branches.
+   - **`git rebase`**: Replays commits from one branch on top of another, creating a clean and linear project history without extra merge commits.
+
+3. **What happens when two branches modify the same line of a file?**
+   - Git cannot automatically determine which change to keep, so it generates a **merge conflict**. Git inserts conflict markers (`<<<<<<<`, `=======`, `>>>>>>>`) into the file and stops the process until a developer manually resolves the conflict, tests the code, and commits the solution.
+
+4. **How can you display the branch and merge history graphically in the terminal?**
+   - By running the command: `git log --oneline --graph --decorate --all`
+
+5. **What is the difference between a commit and a push?**
+   - **Commit (`git commit`)**: Saves changes locally in your computer's Git database.
+   - **Push (`git push`)**: Uploads local commits from your machine to the remote repository on GitHub.
+
+6. **What are `git stash` and `git stash pop` used for?**
+   - **`git stash`**: Temporarily shelves/hides uncommitted local changes to provide a clean working directory.
+   - **`git stash pop`**: Restores the most recently stashed changes back into your working directory.
+
+7. **What is the difference between `HashMap` and `Hashtable`?**
+   - **`HashMap`**: Allows one `null` key and multiple `null` values; it is non-synchronized (faster, ideal for single-threaded tasks).
+   - **`Hashtable`**: Does not allow any `null` keys or `null` values; it is synchronized (thread-safe, but slightly slower).
+
+8. **What advantages does `Collectors.toMap()` provide over a traditional loop?**
+   - It provides concise, declarative code that transforms stream elements into a Map while enabling explicit key collision resolution rules (such as `(existing, replacement) -> existing`) in a single line without manual loop boilerplate.
+
+9. **When using `stream().map()` on a list of objects, what type of operation is being performed?**
+   - It performs an **intermediate transformation operation**. It applies a function to transform each element in a stream into another form or object and returns a new `Stream`.
+
+10. **What does `stream().filter()` do, and what does it return?**
+    - It evaluates each element in a stream against a boolean predicate condition. It keeps only elements that return `true` and returns a **new `Stream`** containing the filtered elements.
+
+11. **Describe the steps required to create a new feature branch from `develop`.**
+    - **Step 1:** Switch to the develop branch: `git checkout develop`
+    - **Step 2:** Pull the latest updates: `git pull origin develop`
+    - **Step 3:** Create and switch to the new feature branch: `git checkout -b feature/challenge-name`
+
+12. **What is the difference between `git branch` and `git checkout -b`?**
+    - **`git branch <name>`**: Only creates the new branch, leaving you on your current working branch.
+    - **`git checkout -b <name>`**: Creates the new branch AND immediately switches your workspace context to it.
+
+13. **Why should new functionality be developed in `feature/*` branches instead of directly in `main`?**
+    - Developing in `feature/*` branches keeps the `main` branch stable, clean, and production-ready. It allows team members to work on different challenges concurrently without breaking working code before peer review and merging.
+
