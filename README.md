@@ -155,3 +155,12 @@ Briefly explain:
 
 13. **Why should new functionality be developed in `feature/*` branches instead of directly in `main`?**
     - Because it keeps the `main` branch clean and working while we build new features. If something breaks in a feature branch, it won't break the main project.
+
+---
+
+## AI Declaration
+
+- **Tools Used:** Gemini and Claude
+- **Purpose:** Used for code debugging, fixing errors, and refining documentation structure.
+- **Authorship:** All core implementations and Git workflow were completed by the team (Pedro Ayala, Samuel Argalle, Javier Caicedo).
+
