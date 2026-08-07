@@ -23,15 +23,17 @@ public class Challenge5 {
     }
 
     public static PriorityQueue<Integer> processPriorityQueue(HashSet<Integer> hashSet, TreeSet<Integer> treeSet) {
+        TreeSet<Integer> combinadosSinDuplicados = new TreeSet<>();
+        combinadosSinDuplicados.addAll(hashSet);
+        combinadosSinDuplicados.addAll(treeSet);
         PriorityQueue<Integer> priorityQueue = new PriorityQueue<>();
-        priorityQueue.addAll(hashSet);
-        priorityQueue.addAll(treeSet);
+        priorityQueue.addAll(combinadosSinDuplicados);
         return priorityQueue;
     }
 
     public static void main(String[] args) {
 
-        List<Integer> datosA = List.of(5, 14, 8, 22, 5, 19, 14, 31, 1);
+        List<Integer> datosA = List.of(4, 9, 15, 7, 18, 21, 10, 5);
 
         HashSet<Integer> resultadoA = tree(datosA);
 
