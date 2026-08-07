@@ -161,6 +161,7 @@ Briefly explain:
 ## AI Declaration
 
 - **Tools Used:** Gemini and Claude
-- **Purpose:** Used for code debugging, fixing errors, and refining documentation structure.
+- **Purpose:** Used for code implementation assistance, debugging, fixing errors, and refining documentation structure.
 - **Authorship:** All core implementations and Git workflow were completed by the team (Pedro Ayala, Samuel Argalle, Javier Caicedo).
+
 
